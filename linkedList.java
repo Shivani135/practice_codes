@@ -33,11 +33,20 @@ class linkedList{
     public void searchingELement(node start, int x){
         node tempnode = new node();
         tempnode = start;
+        int c = 0;
         do{
-            if(tempnode.data == x)
+            if(tempnode.data == x){
                 System.out.println("ELement found");
-            tempnode=tempnode.next;
+                c=1;
+                break;
+            }
+            else{
+                tempnode = tempnode.next;
+            }
         }while(tempnode != null);
+        if(c != 1){
+            System.out.println("Element not Found");
+        }
     }
 
     public static void main(String args[]) throws IOException{
@@ -52,8 +61,20 @@ class linkedList{
         start = ll.insertElement(start,6);
         start = ll.insertElement(start,7);
         start = ll.deleteElement(start,6);
-        ll.searchingELement(start,7);
+        System.out.println("Enter Element to find");
+        int find = Integer.parseInt(in.readLine());
+        ll.searchingELement(start,find);
     }
 }
+/*TEST CASE
+Enter Element to find
+7
+ELement found
 
+Enter Element to find
+4
+Element not Found
+
+ */
+//Time Complexity - O(n)
 

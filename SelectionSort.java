@@ -32,3 +32,31 @@ class SelectionSort{
 
 	}
 }
+/*
+TEST CASE:
+Enter length of array
+10
+Enter nos.
+5
+3
+9
+1
+4
+7
+3
+8
+6
+2
+Sorted Array
+1
+2
+3
+3
+4
+5
+6
+7
+8
+9
+*/
+//Time Complexity - O(n^2)

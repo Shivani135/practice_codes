@@ -70,4 +70,15 @@ public static void main(String args[]){
     
 }
 }
-
+/*TEST CASE
+10
+12
+20
+12
+8
+5
+13
+3
+18
+*/
+//Time Complexity - O(n)

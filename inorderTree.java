@@ -61,4 +61,15 @@ class inorderTree{
 
     }
 }
-
+/*TEST CASE-
+5
+8
+12
+20
+12
+10
+13
+3
+18
+*/
+//Time Complexity- O(n)

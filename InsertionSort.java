@@ -30,5 +30,32 @@ class InsertionSort{
         }
     }
 }
-
+/*TEST CASE-
+Enter the length
+10
+Enter nos to be sorted
+4
+5
+2
+3
+1
+6
+9
+7
+8
+0
+Sorted Array
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+*/
+//time Complexity- O(n^2)
+ 
 

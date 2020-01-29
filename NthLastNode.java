@@ -57,4 +57,9 @@ class NthLastNode{
 		ll.nthLastNode(start, n);
 	}
 }
-
+/*TEST CASE
+Enter no. which we have to extract from last
+3
+17
+*/
+//Time Complexity - O(n)
