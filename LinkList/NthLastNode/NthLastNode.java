@@ -4,7 +4,9 @@ class NthLastNode {
 
   public void creatingLL(int data) {
     LLNode newnode = new LLNode();
-    newnode.data = data;
+    /*
+     * newnode.data = data;
+     */
 
     if (head == null) {
       head = newnode;
