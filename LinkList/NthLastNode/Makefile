@@ -1,5 +1,8 @@
+# javac -classpath .:../../junit_jars/junit-4.12.jar TestNthLastNode.java
+# java -classpath .:../../junit_jars/junit-4.12.jar:../../junit_jars/hamcrest-core-1.3.jar org.junit.runner.JUnitCore TestNthLastNode
+
 # Give the assignment name here.
-ASG_NAME=AsgA0154
+ASG_NAME=NthLastNode
 
 # This creates the MainAsgA0154 class name.
 MAIN_CLASS=Main$(ASG_NAME)
@@ -45,3 +48,4 @@ clean:
 
 javadoc:
 	javadoc *.java -d $(JAVADOC_DIR) $(JAVADOC_FLAGS) 
+
