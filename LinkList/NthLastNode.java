@@ -16,6 +16,29 @@ class NthLastNode{
         return start;
     }
 
+    public void nthLastNode2(node start, int n){
+        node tempnode = new node();
+        tempnode = start;
+        int len = 1;
+        if( (n > 0)){
+            while(tempnode.next != null ){
+                tempnode= tempnode.next;
+                len++;
+            }
+            tempnode = start;
+            if(len>n){
+                for(int i = 0; i < len - n ; i++){
+                    tempnode = tempnode.next;
+                }
+                System.out.println("new" + tempnode.data);
+            }else{
+                System.out.println("Number is graeter than length");
+            }
+        }else{
+            System.out.println("Number is zero");
+        }
+    }
+    //Logic needs to be improved
     public void nthLastNode(node start, int n){
         node tempnode = new node();
         tempnode = start;
@@ -54,12 +77,21 @@ class NthLastNode{
         node tempnode = new node();
         tempnode = start;
         /*while(tempnode !=null){
-            System.out.println(tempnode.data);
-            tempnode= tempnode.next;		
-        }*/
+          System.out.println(tempnode.data);
+          tempnode= tempnode.next;		
+          }*/
         System.out.println("Enter no. which we have to extract from last");
-        int n = Integer.parseInt(in.readLine());
-        ll.nthLastNode(start, n);
+        String str = in.readLine();
+        try{
+            int n = Integer.parseInt(str);
+            ll.nthLastNode(start, n);
+            ll.nthLastNode2(start, n);
+        }
+        catch(NumberFormatException e){
+           // ll.nthLastNode(start, n);
+           // ll.nthLastNode2(start, n);
+             System.out.println("Wrong Input");
+        }
     }
 }
 /*TEST CASE
