@@ -1,0 +1,6 @@
+syntax: glob
+
+*.box
+*.vdi
+*.vagrant*
+*.class
