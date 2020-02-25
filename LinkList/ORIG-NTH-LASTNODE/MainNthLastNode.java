@@ -7,7 +7,7 @@ class MainNthLastNode {
     LLNode start = new LLNode();
     NthLastNode ll = new NthLastNode();
     // start = null;
-    start.data = 10;
+   // start.data = 10;
     start = ll.creatingLL(start, 4);
     start = ll.creatingLL(start, 45);
     start = ll.creatingLL(start, 5);
@@ -26,8 +26,8 @@ class MainNthLastNode {
     String str = in.readLine();
     try {
       int n = Integer.parseInt(str);
-      ll.nthLastNode(start, n);
-      ll.nthLastNode2(start, n);
+			//ll.nthLastNode(start, n);
+      //ll.nthLastNode2(start, n);
     } catch (NumberFormatException e) {
       // ll.nthLastNode(start, n);
       // ll.nthLastNode2(start, n);
