@@ -1,9 +1,9 @@
 import java.io.*;
 import java.sql.*;
 
-class Addbook{
+class AddBook{
 
-    void InsertBook(Connection connAddBook)throws IOException{
+    void insertBook(Connection connAddBook)throws IOException{
         InputStreamReader read = new InputStreamReader (System.in);
         BufferedReader in = new BufferedReader(read);
         try{
@@ -24,4 +24,18 @@ class Addbook{
             System.out.println();
         }
     }
+    void printDetails (Connection ConnAddBook ) {
+        try{
+            Statement stmt=ConnAddBook.createStatement();
+            ResultSet rs1= stmt.executeQuery("select * from book_details");
+            while(rs1.next()){
+                System.out.println(rs1.getObject("title")+"\t"+rs1.getObject("author")+"\t"+rs1.getObject("category"));
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+
 }

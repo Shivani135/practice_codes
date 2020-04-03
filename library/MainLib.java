@@ -15,7 +15,8 @@ class MainLib{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con;
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","root");
-            addBook.InsertBook(con);
+            addBook.insertBook(con);
+            addBook.printDetails(con);
             con.close();
         }
         catch(Exception e)
