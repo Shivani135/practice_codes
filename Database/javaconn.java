@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.Random;
 import java.sql.*;
-class javacon
+class javaconn
 {
 
     enum place{
@@ -10,11 +10,11 @@ class javacon
         public static place placerandom(){
             place[] places = place.values();
             Random generator = new Random();
-            return places[generator.nextInt(vias.length)];
+            return places[generator.nextInt(place.values().length)];
         }
     }
     public place placeGenrator;
-    void InsertStudent(Connection dbConnection1) {
+    public void InsertStudent(Connection dbConnection1) {
         String name, address;
         Random randm= new Random();
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+ "abcdefghijklmnopqrstuvxyz";
@@ -23,23 +23,24 @@ class javacon
         for (int i = 0; i < 8; i++) {
             int index = (int)(AlphaNumericString.length()* Math.random());
             sb.append(AlphaNumericString.charAt(index));
-        try{
-            Statement stmt=dbConnection1.createStatement();
-            for (int i=0;i<1000;i++) {
-                  for(int j = 0; j<8; j++){
-                      int index = (int)(AlphaNumericString.length()* Math.random());
-                      sb.append(AlphaNumericString.charAt(index));
-                  }
-                user_id="Anything"+i;
-                user_first_name="Rishi"+i;
-                user_last_name="Agrawal"+i;
-                user_phn_no=randm.nextInt(99999999);
-                user_email="example"+i+"@try.com";   
-                stmt.executeUpdate("insert into user values('"+user_id+"','"+user_first_name+"','"+user_last_name+"','"+user_phn_no+"','"+user_email+"')");
+            try{
+                Statement stmt=dbConnection1.createStatement();
+                for (int k = 0; k < 1000; k++) {
+                    for(int j = 0; j<8; j++){
+                        index = (int)(AlphaNumericString.length()* Math.random());
+                        sb.append(AlphaNumericString.charAt(index));
+                    }
+                    String user_id="Anything"+k;
+                    String user_first_name="Rishi"+k;
+                    String user_last_name="Agrawal"+k;
+                    long user_phn_no=randm.nextInt(99999999);
+                    String user_email="example"+k+"@try.com";   
+                    stmt.executeUpdate("insert into user values('"+user_id+"','"+user_first_name+"','"+user_last_name+"','"+user_phn_no+"','"+user_email+"')");
+                }
             }
-        }
-        catch(Exception e){
-            System.out.println();
+            catch(Exception e){
+                System.out.println();
+            }
         }
     }
 
@@ -94,7 +95,7 @@ class javacon
 
             //  Statement stmt=con.createStatement();
             //  ResultSet rs;  
-            executing_query.InsertUsers(con,5);
+            executing_query.InsertStudent(con);
             executing_query.InsertJobs(con,5); 
             executing_query.PrintJobs(con);
 
