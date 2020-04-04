@@ -6,9 +6,9 @@ class MainLib{
         BufferedReader in = new BufferedReader(read);
         AddBook addBook = new AddBook();
        /* IssueBook issueBook = new IssueBook();
-        ReturnBook returnBook = new ReturnBook();
+        ReturnBook returnBook = new ReturnBook();*/
         AddMember addMember = new AddMember();
-        AvailableBook availableBook = new AvailableBook();
+       /* AvailableBook availableBook = new AvailableBook();
         SearchingBook searchingBook = new SearchingBook();*/
         
         try{
@@ -17,6 +17,8 @@ class MainLib{
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","root");
             addBook.insertBook(con);
             addBook.printDetails(con);
+            addMember.addMember(con);
+            addMember.printDetails(con);
             con.close();
         }
         catch(Exception e)
